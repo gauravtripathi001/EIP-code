@@ -22,16 +22,23 @@ def d_f_p_1(a,pIndex):
 #Swap the list with the pivot element
 #Go over the list in reversed direction
 #Swap the list with the pivot element
+#O(n^2)
+#O(1)
+#
 def d_f_p_2(a,pIndex):
     pivot=a[pIndex]
     for i in range(len(a)):
-        for j in range(i+1,len(a)-1):
+        for j in range(i+1,len(a)):
             if(a[j]<pivot):
-                a[j],a[pIndex]=a[pIndex],a[j]
-                pIndex+=1
+                a[i],a[j]=a[j],a[i]
                 break
-    #for i in range(reversed(len(a))):
-    #    for 
+    
+    for i in reversed(range(len(a))):
+        for j in reversed(range(i)):
+            if(a[j]>pivot):
+                a[i],a[j]=a[j],a[i]
+                break
+    return a
         
 
 
