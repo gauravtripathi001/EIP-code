@@ -1,15 +1,17 @@
 def bubble_sort(a):
-    l=len(a)
-    for i in range(1,l-1):
-        for j in range(0,l-i-1):
+    n=len(a)
+    for i in range(1,n):
+        flag=0
+        for j in range(0,n-i):
             if(a[j]>a[j+1]):
-                temp=a[j]
-                a[j]=a[j+1]
-                a[j+1]=temp  
+                a[j],a[j+1]=a[j+1],a[j]
+                flag=1
+        if(flag==0):
+            break
+    return a
 
 def main():
-    a=[4,2,3,1,7,9]
-    bubble_sort(a)
-    print(a)
+    a=[9,3,1,5,2,8,0]
+    print(bubble_sort(a))
 
 main()
