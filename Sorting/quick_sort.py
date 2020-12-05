@@ -8,7 +8,7 @@ def quick_sort(a,s,e):
 def partition(a,s,e):
     pIndex=s
     pivot=a[e]
-    for i in range(s,e):
+    for i in range(s,e+1):
         if(a[i]<pivot):
             a[pIndex],a[i]=a[i],a[pIndex]
             pIndex+=1

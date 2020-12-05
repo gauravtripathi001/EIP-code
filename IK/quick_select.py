@@ -19,9 +19,9 @@ def quick_select(a,k,s,e):
     if(k==small):
         return a[small]
     elif(k<small):
-        quick_select(a,k,s,small-1)
+        return quick_select(a,k,s,small-1)
     else:
-        quick_select(a,k,small+1,e)
+        return quick_select(a,k,small+1,e)
     #return -1
 
 def main():
